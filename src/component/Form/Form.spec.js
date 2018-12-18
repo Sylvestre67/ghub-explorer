@@ -6,6 +6,12 @@ let component;
 
 const props = {
 	classes: {},
+	history: {
+		replace: jest.fn(),
+	},
+	location: {
+		search: '',
+	},
 };
 
 describe('Form', () => {

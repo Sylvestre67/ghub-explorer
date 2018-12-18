@@ -1,3 +1,106 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`Form should render correctly 1`] = `undefined`;
+exports[`Form should render correctly 1`] = `
+<form
+  autoComplete="off"
+  noValidate={true}
+>
+  <WithStyles(Grid)
+    container={true}
+    spacing={16}
+  >
+    <WithStyles(Grid)
+      item={true}
+      sm={6}
+      xs={12}
+    >
+      <TextField
+        id="q"
+        label="Search"
+        margin="normal"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        value=""
+        variant="outlined"
+      />
+      <TextField
+        id="stars"
+        label="Stars"
+        margin="normal"
+        onChange={[Function]}
+        required={false}
+        select={false}
+        value=""
+        variant="outlined"
+      />
+    </WithStyles(Grid)>
+    <WithStyles(Grid)
+      item={true}
+      sm={6}
+      xs={12}
+    >
+      <WithStyles(FormControl)
+        variant="outlined"
+      >
+        <WithStyles(WithFormControlContext(InputLabel))
+          htmlFor="license"
+        >
+          License
+        </WithStyles(WithFormControlContext(InputLabel))>
+        <WithStyles(WithFormControlContext(Select))
+          inputProps={
+            Object {
+              "id": "license",
+              "name": "license",
+            }
+          }
+          native={true}
+          onChange={[Function]}
+          value=""
+        >
+          <option
+            value=""
+          />
+          <option
+            value={10}
+          >
+            Ten
+          </option>
+          <option
+            value={20}
+          >
+            Twenty
+          </option>
+          <option
+            value={30}
+          >
+            Thirty
+          </option>
+        </WithStyles(WithFormControlContext(Select))>
+      </WithStyles(FormControl)>
+      <WithStyles(Checkbox)
+        checked={false}
+        id="forked"
+        onChange={[Function]}
+      />
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+  <WithStyles(Grid)
+    container={true}
+  >
+    <WithStyles(Grid)
+      item={true}
+      xs={12}
+    >
+      <WithStyles(Button)
+        color="primary"
+        elevation={0}
+        variant="contained"
+      >
+        Search
+      </WithStyles(Button)>
+    </WithStyles(Grid)>
+  </WithStyles(Grid)>
+</form>
+`;
