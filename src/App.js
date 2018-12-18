@@ -19,10 +19,11 @@ const styles = theme => ({
 		flexFlow: 'column',
 	},
 	body: {
-		flexGrow: '1',
+		flex: '1 0 auto',
 		display: 'flex',
 		flexFlow: 'column',
 		alignItems: 'center',
+		padding: theme.spacing.unit * 2,
 	},
 	jumbo: {
 		textAlign: 'center',
