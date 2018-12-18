@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header should render correctly 1`] = `
+<WithStyles(AppBar)
+  elevation={0}
+  position="fixed"
+>
+  <WithStyles(Toolbar)>
+    <WithStyles(Typography)
+      className=""
+      color="inherit"
+      variant="h6"
+    >
+      GHub Explorer
+    </WithStyles(Typography)>
+  </WithStyles(Toolbar)>
+</WithStyles(AppBar)>
+`;
