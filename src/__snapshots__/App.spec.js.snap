@@ -2,6 +2,7 @@
 
 exports[`App should render correctly 1`] = `
 <Fragment>
+  <WithStyles(Header) />
   <WithStyles(Typography)>
     Hello World !
   </WithStyles(Typography)>
