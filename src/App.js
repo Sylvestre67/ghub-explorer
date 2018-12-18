@@ -16,6 +16,9 @@ const styles = theme => ({
 	},
 	body: {
 		flexGrow: '1',
+		display: 'flex',
+		flexFlow: 'column',
+		alignItems: 'center',
 		backgroundColor: 'white',
 	},
 	jumbo: {
@@ -37,7 +40,7 @@ class App extends Component {
 				<Header />
 				<div className={classes.body}>
 					<Grid container>
-						<Grid item xs className={classes.jumbo}>
+						<Grid item xs={12} className={classes.jumbo}>
 							<Typography variant="h5">{site_title}</Typography>
 						</Grid>
 					</Grid>
