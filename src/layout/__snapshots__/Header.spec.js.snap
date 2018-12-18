@@ -3,7 +3,7 @@
 exports[`Header should render correctly 1`] = `
 <WithStyles(AppBar)
   elevation={0}
-  position="fixed"
+  position="relative"
 >
   <WithStyles(Toolbar)>
     <WithStyles(Typography)

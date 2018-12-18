@@ -7,6 +7,7 @@ let component;
 const props = {
 	classes: {
 		grow: '',
+		img: '',
 	},
 };
 

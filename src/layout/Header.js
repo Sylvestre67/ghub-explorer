@@ -23,7 +23,7 @@ export function Header(props) {
 	const { classes } = props;
 
 	return (
-		<AppBar position="fixed" elevation={0}>
+		<AppBar position="relative" elevation={0}>
 			<Toolbar>
 				{isEven ? (
 					<div>
