@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core';
 
@@ -8,8 +9,8 @@ import Typography from '@material-ui/core/Typography';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 
-import Form from './component/Form';
-import Results from './component/Results';
+import FourOhFour from './routes/FourOhFour';
+import Home from './routes/Home';
 
 const styles = theme => ({
 	root: {
@@ -46,11 +47,14 @@ class App extends Component {
 							<Typography variant="h5">{site_title}</Typography>
 						</Grid>
 					</Grid>
-
 					<Grid container>
 						<Grid item xs={12}>
-							<Form />
-							<Results />
+							<Router basename={process.env.PUBLIC_URL}>
+								<Switch>
+									<Route exact path="/" component={Home} />
+									<Route component={FourOhFour} />
+								</Switch>
+							</Router>
 						</Grid>
 					</Grid>
 				</div>
