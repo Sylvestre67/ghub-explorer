@@ -1,10 +1,12 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`App should render correctly 1`] = `
-<Fragment>
-  <WithStyles(Header) />
-  <WithStyles(Typography)>
-    Hello World !
-  </WithStyles(Typography)>
-</Fragment>
+<App
+  classes={
+    Object {
+      "body": "App-body-2",
+      "root": "App-root-1",
+    }
+  }
+/>
 `;
