@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer should render correctly 1`] = `
+<footer>
+  <WithStyles(Toolbar)
+    elevation={0}
+  >
+    <WithStyles(Typography)
+      color="inherit"
+      variant="caption"
+    />
+  </WithStyles(Toolbar)>
+</footer>
+`;
