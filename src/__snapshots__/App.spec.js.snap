@@ -5,6 +5,7 @@ exports[`App should render correctly 1`] = `
   classes={
     Object {
       "body": "App-body-2",
+      "jumbo": "App-jumbo-3",
       "root": "App-root-1",
     }
   }
