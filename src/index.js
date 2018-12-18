@@ -9,6 +9,8 @@ import * as serviceWorker from './serviceWorker';
 
 import theme from './theme/theme';
 
+import './index.css';
+
 ReactDOM.render(
 	<MuiThemeProvider theme={theme}>
 		<CssBaseline />
