@@ -25,4 +25,8 @@ export function FourOhFour(props) {
 	);
 }
 
+FourOhFour.propTypes = {
+	classes: PropTypes.object.isRequired,
+};
+
 export default withStyles(styles)(FourOhFour);

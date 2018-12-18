@@ -1,5 +1,6 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+
+import Divider from '@material-ui/core/Divider';
 
 import Form from '../component/Form';
 import Results from '../component/Results';
@@ -9,6 +10,7 @@ export class Home extends React.PureComponent {
 		return (
 			<React.Fragment>
 				<Form />
+				<Divider />
 				<Results />
 			</React.Fragment>
 		);
