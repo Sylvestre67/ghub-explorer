@@ -27,6 +27,13 @@ const theme = createMuiTheme({
 		fontFamily: 'Muli, Helvetica, Arial, sans-serif',
 		useNextVariants: true,
 	},
+	overrides: {
+		MuiGrid: {
+			container: {
+				maxWidth: '1400px',
+			},
+		},
+	},
 });
 
 export default theme;
