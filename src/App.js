@@ -8,6 +8,9 @@ import Typography from '@material-ui/core/Typography';
 import Header from './layout/Header';
 import Footer from './layout/Footer';
 
+import Form from './component/Form';
+import Results from './component/Results';
+
 const styles = theme => ({
 	root: {
 		height: '100%',
@@ -19,7 +22,6 @@ const styles = theme => ({
 		display: 'flex',
 		flexFlow: 'column',
 		alignItems: 'center',
-		backgroundColor: 'white',
 	},
 	jumbo: {
 		textAlign: 'center',
@@ -46,14 +48,9 @@ class App extends Component {
 					</Grid>
 
 					<Grid container>
-						<Grid item xs>
-							<Typography>Form</Typography>
-						</Grid>
-					</Grid>
-
-					<Grid container>
-						<Grid item xs>
-							<Typography>Results</Typography>
+						<Grid item xs={12}>
+							<Form />
+							<Results />
 						</Grid>
 					</Grid>
 				</div>
