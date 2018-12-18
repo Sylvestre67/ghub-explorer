@@ -1,6 +1,7 @@
 # Ghub Explorer
 
 A Github repository search UI.
+See it live [here](https://sleepy-jepsen-cd854f.netlify.com/).
 
 ## react-app
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
