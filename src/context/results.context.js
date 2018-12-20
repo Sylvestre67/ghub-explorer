@@ -1,3 +1,3 @@
 import React from 'react';
 
-export const ResultsContext = React.createContext({ results: [] });
+export const ResultsContext = React.createContext({ results: {} });

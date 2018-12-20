@@ -15,9 +15,6 @@ import FormControlLabel from '@material-ui//core/FormControlLabel';
 
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
-//
-// import { createRequest } from '../../utils/api';
-// import { queryfy } from '../../utils/utils';
 
 const licenseType = {
 	mit: 'MIT',
@@ -78,30 +75,6 @@ export class Form extends React.PureComponent {
 			this.setState(qs.parse(search.slice(1)));
 		}
 	}
-
-	// componentDidUpdate(prevProps, prevState) {
-	// 	const { location, history } = this.props;
-	//
-	// 	if (location.key !== prevProps.location.key) {
-	// 		// createRequest({
-	// 		// 	method: 'GET',
-	// 		// 	url: `${
-	// 		// 		process.env.REACT_APP_GITHUB_ENDPOINT
-	// 		// 	}search/repositories`,
-	// 		// 	headers: {
-	// 		// 		Authorization: `token ${process.env.REACT_APP_GHUB_TOKEN}`,
-	// 		// 	},
-	// 		// 	params: queryfy(this.state),
-	// 		// });
-	// 	}
-	//
-	// 	if (prevState !== this.state) {
-	// 		// history.replace({
-	// 		// 	path: location.pathname,
-	// 		// 	search: qs.stringify(this.state),
-	// 		// });
-	// 	}
-	// }
 
 	handleChange(e) {
 		this.setState(
