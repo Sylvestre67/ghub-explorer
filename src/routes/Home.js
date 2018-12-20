@@ -3,6 +3,7 @@ import React from 'react';
 import Divider from '@material-ui/core/Divider';
 
 import Form from '../component/Form';
+import ResultsProvider from '../component/ResultsProvider';
 import Results from '../component/Results';
 
 export class Home extends React.PureComponent {
@@ -11,7 +12,9 @@ export class Home extends React.PureComponent {
 			<React.Fragment>
 				<Form />
 				<Divider />
-				<Results />
+				<ResultsProvider>
+					<Results />
+				</ResultsProvider>
 			</React.Fragment>
 		);
 	}
