@@ -2,6 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import qs from 'qs';
 import { withRouter } from 'react-router-dom';
+import debounce from 'lodash.debounce';
 
 import { withStyles } from '@material-ui/core/styles';
 
@@ -10,8 +11,20 @@ import TextField from '@material-ui/core/TextField';
 import Checkbox from '@material-ui/core/Checkbox';
 import Grid from '@material-ui/core/Grid';
 import FormControl from '@material-ui/core/FormControl';
+import FormControlLabel from '@material-ui//core/FormControlLabel';
+
 import InputLabel from '@material-ui/core/InputLabel';
 import Select from '@material-ui/core/Select';
+//
+// import { createRequest } from '../../utils/api';
+// import { queryfy } from '../../utils/utils';
+
+const licenseType = {
+	mit: 'MIT',
+	isc: 'ISC',
+	'apache-2.0': 'Apache license 2.0',
+	gpl: 'GNU General Public License family',
+};
 
 const initialQuery = {
 	q: '',
@@ -48,45 +61,72 @@ export class Form extends React.PureComponent {
 		super(props);
 
 		this.handleChange = this.handleChange.bind(this);
+		this.updateLocation = debounce(this.updateLocation, 500);
+
 		this.state = initialQuery;
 	}
 
 	componentDidMount() {
-		const { location, history } = this.props;
+		const { location } = this.props;
 		const { search } = location;
 
 		// If no query was passed initially we want to replace this history entry
 		// with a valid one
 		if (!search.length) {
-			history.replace({
-				path: location.pathname,
-				search: qs.stringify(initialQuery),
-			});
+			this.updateLocation();
 		} else {
-			this.setState(qs.parse(search));
+			this.setState(qs.parse(search.slice(1)));
 		}
 	}
 
-	componentDidUpdate(prevProps, prevState) {
-		const { location, history } = this.props;
-
-		if (location.key !== prevProps.location.key) {
-			console.log('updated the query');
-		}
-
-		if (prevState !== this.state) {
-			history.replace({
-				path: location.pathname,
-				search: qs.stringify(this.state),
-			});
-		}
-	}
+	// componentDidUpdate(prevProps, prevState) {
+	// 	const { location, history } = this.props;
+	//
+	// 	if (location.key !== prevProps.location.key) {
+	// 		// createRequest({
+	// 		// 	method: 'GET',
+	// 		// 	url: `${
+	// 		// 		process.env.REACT_APP_GITHUB_ENDPOINT
+	// 		// 	}search/repositories`,
+	// 		// 	headers: {
+	// 		// 		Authorization: `token ${process.env.REACT_APP_GHUB_TOKEN}`,
+	// 		// 	},
+	// 		// 	params: queryfy(this.state),
+	// 		// });
+	// 	}
+	//
+	// 	if (prevState !== this.state) {
+	// 		// history.replace({
+	// 		// 	path: location.pathname,
+	// 		// 	search: qs.stringify(this.state),
+	// 		// });
+	// 	}
+	// }
 
 	handleChange(e) {
-		this.setState({
-			[e.target.id]: e.target.checked ? e.target.checked : e.target.value,
+		this.setState(
+			{
+				[e.target.id]: e.target.checked
+					? e.target.checked
+					: e.target.value,
+			},
+			() => {
+				// update the location based on new state
+				this.updateLocation();
+			}
+		);
+	}
+
+	updateLocation() {
+		const { location, history } = this.props;
+
+		return history.push({
+			path: location.pathname,
+			search: qs.stringify(this.state),
 		});
 	}
+
+	validateStarsFormat() {}
 
 	render() {
 		const { classes } = this.props;
@@ -105,7 +145,6 @@ export class Form extends React.PureComponent {
 							onChange={e => this.handleChange(e)}
 							margin="normal"
 						/>
-
 						<TextField
 							id="stars"
 							label="Stars"
@@ -113,6 +152,7 @@ export class Form extends React.PureComponent {
 							value={stars}
 							variant="outlined"
 							onChange={e => this.handleChange(e)}
+							onBlur={e => this.validateStarsFormat(e)}
 							margin="normal"
 						/>
 					</Grid>
@@ -130,16 +170,30 @@ export class Form extends React.PureComponent {
 									id: 'license',
 								}}>
 								<option value="" />
-								<option value={10}>Ten</option>
-								<option value={20}>Twenty</option>
-								<option value={30}>Thirty</option>
+								{Object.entries(licenseType).map(lic => {
+									const [key, license] = lic;
+									return (
+										<option key={key} value={key}>
+											{license}
+										</option>
+									);
+								})}
 							</Select>
 						</FormControl>
 
-						<Checkbox
-							id="forked"
-							checked={forked}
-							onChange={e => this.handleChange(e)}
+						<FormControlLabel
+							control={
+								<Checkbox
+									id="forked"
+									checked={
+										typeof forked === 'boolean'
+											? forked
+											: forked === 'true'
+									}
+									onChange={e => this.handleChange(e)}
+								/>
+							}
+							label="Include Forked"
 						/>
 					</Grid>
 				</Grid>

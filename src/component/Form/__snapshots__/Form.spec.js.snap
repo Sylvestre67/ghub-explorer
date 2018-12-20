@@ -28,6 +28,7 @@ exports[`Form should render correctly 1`] = `
         id="stars"
         label="Stars"
         margin="normal"
+        onBlur={[Function]}
         onChange={[Function]}
         required={false}
         select={false}
@@ -63,26 +64,40 @@ exports[`Form should render correctly 1`] = `
             value=""
           />
           <option
-            value={10}
+            key="mit"
+            value="mit"
           >
-            Ten
+            MIT
           </option>
           <option
-            value={20}
+            key="isc"
+            value="isc"
           >
-            Twenty
+            ISC
           </option>
           <option
-            value={30}
+            key="apache-2.0"
+            value="apache-2.0"
           >
-            Thirty
+            Apache license 2.0
+          </option>
+          <option
+            key="gpl"
+            value="gpl"
+          >
+            GNU General Public License family
           </option>
         </WithStyles(WithFormControlContext(Select))>
       </WithStyles(FormControl)>
-      <WithStyles(Checkbox)
-        checked={false}
-        id="forked"
-        onChange={[Function]}
+      <WithStyles(WithFormControlContext(FormControlLabel))
+        control={
+          <WithStyles(Checkbox)
+            checked={false}
+            id="forked"
+            onChange={[Function]}
+          />
+        }
+        label="Include Forked"
       />
     </WithStyles(Grid)>
   </WithStyles(Grid)>
