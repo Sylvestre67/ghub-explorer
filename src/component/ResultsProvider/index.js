@@ -9,7 +9,7 @@ import { ResultsContext } from '../../context/results.context';
 import { queryfy } from '../../utils/utils';
 import { createRequest } from '../../utils/api';
 
-class ResultsProvider extends React.Component {
+export class ResultsProvider extends React.Component {
 	constructor(props) {
 		super(props);
 		this.updateResults = debounce(this.updateResults, 600);
