@@ -2,6 +2,6 @@
 
 exports[`Results should render correctly 1`] = `
 <div>
-  Results
+  {}
 </div>
 `;
