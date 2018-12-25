@@ -1,16 +1,17 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 
-import { Results } from './index';
+import ResultItem from './ResultItem';
 let component;
 
 const props = {
 	classes: {},
+	item: {},
 };
 
-describe('Results', () => {
+describe('ResultItem', () => {
 	beforeAll(() => {
-		component = shallow(<Results {...props} />);
+		component = shallow(<ResultItem {...props} />);
 	});
 
 	it('should render correctly', () => {

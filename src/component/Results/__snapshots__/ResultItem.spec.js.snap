@@ -1,0 +1,13 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ResultItem should render correctly 1`] = `
+<ResultItem
+  classes={
+    Object {
+      "button": "ResultItem-button-2",
+      "root": "ResultItem-root-1",
+    }
+  }
+  item={Object {}}
+/>
+`;
