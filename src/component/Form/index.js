@@ -26,7 +26,7 @@ const licenseType = {
 const initialQuery = {
 	q: '',
 	license: '',
-	forked: false,
+	forked: true,
 	stars: '',
 };
 
