@@ -8,7 +8,7 @@ import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-const isEven = process.env.REACT_APP_IS_EVEN;
+const isEven = process.env.REACT_APP_WEBSITE_NAME === 'Even Financial';
 
 const styles = theme => ({
 	grow: {

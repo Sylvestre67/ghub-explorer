@@ -15,7 +15,9 @@ export class ResultsProvider extends React.Component {
 		this.updateResults = debounce(this.updateResults, 600);
 		this.state = {
 			isFetching: true,
-			results: {},
+			results: {
+				items: [],
+			},
 		};
 	}
 
