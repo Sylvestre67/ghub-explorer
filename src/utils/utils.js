@@ -1,5 +1,10 @@
+const org = process.env.REACT_APP_GITHUB_ORG;
+
 export function queryfy(query) {
-	let string = 'q=org:EVENFinancial';
+	const { q } = query;
+	let string = `q=${q}+org:${org}`;
+
+	delete query.q;
 
 	Object.keys(query).forEach((key, idx) => {
 		if (query[key]) {
