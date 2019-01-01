@@ -12,7 +12,7 @@ import { createRequest } from '../../utils/api';
 export class ResultsProvider extends React.Component {
 	constructor(props) {
 		super(props);
-		this.updateResults = debounce(this.updateResults, 600);
+
 		this.state = {
 			isFetching: true,
 			results: {
@@ -37,6 +37,7 @@ export class ResultsProvider extends React.Component {
 	updateResults() {
 		const { location } = this.props;
 		const { search } = location;
+
 		this.setState({ isFetching: true });
 
 		return createRequest({

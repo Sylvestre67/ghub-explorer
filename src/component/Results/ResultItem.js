@@ -41,9 +41,11 @@ function ResultItem(props) {
 		<Paper className={classes.root} elevation={0}>
 			<Grid container>
 				<Grid item xs={12} sm={8} className={classes.item}>
-					<span className={classes.forked}>
-						<Typography>Forked</Typography>
-					</span>
+					{item.fork && (
+						<span className={classes.forked}>
+							<Typography>Forked</Typography>
+						</span>
+					)}
 					<Typography color="primary" gutterBottom>
 						{item.name}
 					</Typography>
@@ -55,7 +57,9 @@ function ResultItem(props) {
 				</Grid>
 				<Grid item xs={12} sm={2} className={classes.item}>
 					<Typography>License</Typography>
-					<Typography>{item.license.name}</Typography>
+					<Typography>
+						{item.license ? item.license.name : 'N/A'}
+					</Typography>
 				</Grid>
 			</Grid>
 		</Paper>
