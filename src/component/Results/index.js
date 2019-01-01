@@ -25,13 +25,9 @@ class Results extends React.Component {
 		const { results, isFetching } = this.context;
 		const { items } = results;
 
-		if (items.length) {
+		if (!isFetching && items.length) {
 			return items.map(item => <ResultItem key={item.id} item={item} />);
 		}
-
-		// if (isFetching) {
-		//
-		// }
 
 		if (!isFetching && items.length === 0) {
 			return (
