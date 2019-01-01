@@ -6,7 +6,7 @@ import { withStyles } from '@material-ui/core';
 import Toolbar from '@material-ui/core/Toolbar';
 import Typography from '@material-ui/core/Typography';
 
-const isEven = process.env.REACT_APP_IS_EVEN;
+const isEven = process.env.REACT_APP_WEBSITE_NAME === 'Even Financial';
 
 const styles = theme => ({
 	footer: {
@@ -27,7 +27,7 @@ export function Footer(props) {
 				<Typography variant="caption" color="inherit">
 					{isEven
 						? 'Ⓒ 2017 Even Financial, Inc. - CONFIDENTIAL'
-						: 'Made With Love in NYC'}
+						: 'Made with love in NYC'}
 				</Typography>
 			</Toolbar>
 		</footer>
