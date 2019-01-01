@@ -170,17 +170,6 @@ export class Form extends React.PureComponent {
 						/>
 					</Grid>
 				</Grid>
-				<Grid container>
-					<Grid item xs={12} className={classes.buttonItem}>
-						<Button
-							variant="contained"
-							color="primary"
-							elevation={0}
-							className={classes.button}>
-							Search
-						</Button>
-					</Grid>
-				</Grid>
 			</form>
 		);
 	}
