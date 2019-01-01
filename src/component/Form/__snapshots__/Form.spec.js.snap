@@ -92,7 +92,7 @@ exports[`Form should render correctly 1`] = `
       <WithStyles(WithFormControlContext(FormControlLabel))
         control={
           <WithStyles(Checkbox)
-            checked={false}
+            checked={true}
             id="forked"
             onChange={[Function]}
           />
@@ -103,6 +103,7 @@ exports[`Form should render correctly 1`] = `
   </WithStyles(Grid)>
   <WithStyles(Grid)
     container={true}
+    spacing={16}
   >
     <WithStyles(Grid)
       item={true}
@@ -110,7 +111,7 @@ exports[`Form should render correctly 1`] = `
     >
       <WithStyles(Button)
         color="primary"
-        elevation={0}
+        onClick={[Function]}
         variant="contained"
       >
         Search

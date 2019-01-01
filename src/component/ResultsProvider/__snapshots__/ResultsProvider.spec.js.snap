@@ -5,7 +5,9 @@ exports[`ResultsProvider should render correctly 1`] = `
   value={
     Object {
       "isFetching": true,
-      "results": Object {},
+      "results": Object {
+        "items": Array [],
+      },
     }
   }
 />

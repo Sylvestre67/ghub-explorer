@@ -9,7 +9,7 @@ exports[`Footer should render correctly 1`] = `
       color="inherit"
       variant="caption"
     >
-      Made With Love in NYC
+      Made with love in NYC
     </WithStyles(Typography)>
   </WithStyles(Toolbar)>
 </footer>

@@ -4,7 +4,8 @@ exports[`ResultItem should render correctly 1`] = `
 <ResultItem
   classes={
     Object {
-      "button": "ResultItem-button-2",
+      "forked": "ResultItem-forked-3",
+      "item": "ResultItem-item-2",
       "root": "ResultItem-root-1",
     }
   }

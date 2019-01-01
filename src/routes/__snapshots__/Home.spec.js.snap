@@ -5,7 +5,7 @@ exports[`Home should render correctly 1`] = `
   <WithStyles(withRouter(Form)) />
   <WithStyles(Divider) />
   <withRouter(ResultsProvider)>
-    <Results />
+    <WithStyles(Results) />
   </withRouter(ResultsProvider)>
 </Fragment>
 `;

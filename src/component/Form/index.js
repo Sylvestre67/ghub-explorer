@@ -76,17 +76,9 @@ export class Form extends React.PureComponent {
 	}
 
 	handleChange(e) {
-		this.setState(
-			{
-				[e.target.id]: e.target.checked
-					? e.target.checked
-					: e.target.value,
-			},
-			() => {
-				// update the location based on new state
-				// this.updateLocation();
-			}
-		);
+		this.setState({
+			[e.target.id]: e.target.checked ? e.target.checked : e.target.value,
+		});
 	}
 
 	updateLocation() {
