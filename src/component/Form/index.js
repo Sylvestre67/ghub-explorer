@@ -47,7 +47,7 @@ const styles = theme => ({
 		padding: '6px 48px',
 		border: '1px solid',
 	},
-	buttonItem: {
+	buttonRow: {
 		textAlign: 'center',
 		margin: theme.spacing.unit * 2,
 	},
@@ -56,9 +56,8 @@ const styles = theme => ({
 export class Form extends React.PureComponent {
 	constructor(props) {
 		super(props);
-
 		this.handleChange = this.handleChange.bind(this);
-		this.updateLocation = debounce(this.updateLocation, 500);
+		this.updateLocation = this.updateLocation.bind(this);
 
 		this.state = initialQuery;
 	}
@@ -85,7 +84,7 @@ export class Form extends React.PureComponent {
 			},
 			() => {
 				// update the location based on new state
-				this.updateLocation();
+				// this.updateLocation();
 			}
 		);
 	}
@@ -104,7 +103,7 @@ export class Form extends React.PureComponent {
 	render() {
 		const { classes } = this.props;
 		const { q, stars, forked, license } = this.state;
-
+		const { isFetching } = this.context;
 		return (
 			<form className={classes.container} noValidate autoComplete="off">
 				<Grid container spacing={16}>
@@ -168,6 +167,17 @@ export class Form extends React.PureComponent {
 							}
 							label="Include Forked"
 						/>
+					</Grid>
+				</Grid>
+				<Grid container spacing={16}>
+					<Grid item xs={12} className={classes.buttonRow}>
+						<Button
+							variant="contained"
+							color="primary"
+							className={classes.button}
+							onClick={this.updateLocation}>
+							Search
+						</Button>
 					</Grid>
 				</Grid>
 			</form>
