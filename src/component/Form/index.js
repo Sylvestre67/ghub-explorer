@@ -178,6 +178,7 @@ export class Form extends React.PureComponent {
 }
 
 Form.propTypes = {
+	classes: PropTypes.object.isRequired,
 	location: PropTypes.object.isRequired,
 	history: PropTypes.object.isRequired,
 };

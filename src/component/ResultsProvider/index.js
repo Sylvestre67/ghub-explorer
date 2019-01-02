@@ -62,4 +62,8 @@ export class ResultsProvider extends React.Component {
 	}
 }
 
+ResultsProvider.propTypes = {
+	location: PropTypes.object.isRequired,
+};
+
 export default withRouter(ResultsProvider);

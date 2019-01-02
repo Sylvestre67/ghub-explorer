@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
+
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import { withStyles } from '@material-ui/core';
@@ -64,5 +66,9 @@ class App extends Component {
 		);
 	}
 }
+
+App.propTypes = {
+	classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(App);

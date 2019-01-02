@@ -1,5 +1,5 @@
 import React, { lazy } from 'react';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '@material-ui/core/Typography';
 import CircularProgress from '@material-ui/core/CircularProgress';
@@ -49,7 +49,8 @@ class Results extends React.Component {
 }
 
 Results.contextType = ResultsContext;
-
-Results.propTypes = {};
+Results.propTypes = {
+	classes: PropTypes.object.isRequired,
+};
 
 export default withStyles(styles)(Results);

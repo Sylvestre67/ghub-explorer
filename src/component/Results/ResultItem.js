@@ -67,6 +67,7 @@ function ResultItem(props) {
 }
 
 ResultItem.propTypes = {
+	classes: PropTypes.object.isRequired,
 	item: PropTypes.object.isRequired,
 };
 
